@@ -1,3 +1,6 @@
+Build an SPA to display blog posts with the ability of CRUD - using firebase as the database eventually. Use json placeholder at the start
+Hoping to use animations to improve after.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
