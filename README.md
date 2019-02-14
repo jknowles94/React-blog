@@ -2,6 +2,8 @@ Build an SPA to display blog posts with the ability of CRUD - using firebase as 
 add comments system to individual posts.
 Hoping to use animations to improve after.
 
+PSD - https://freebiesupply.com/free-psd-websites/clear-blog-magazine-template-free-psd/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
