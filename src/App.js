@@ -1,12 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './App.scss';
+import Header from './components/Header/Header';
+import Newsletter from './components/Newsletter/Newsletter';
+import Footer from './components/Footer/Footer';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <Fragment>
+        <Header/>
         <h1>React Blog</h1>
-      </div>
+        <Newsletter/>
+        <Footer/>
+      </Fragment>
     );
   }
 }
