@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <Header/>
+        <Header>Blog <strong>Template</strong></Header>
         <h1>React Blog</h1>
         <Newsletter/>
         <Footer/>
