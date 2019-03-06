@@ -1,8 +1,11 @@
 import React from 'react';
+import './Newsletter.scss';
 
 const Newsletter = (props) => {
     return (
-      <div><p>NEWSLETTER</p></div>
+      <div className="NewsletterSignUp">
+        <p>NEWSLETTER</p>
+      </div>
     );
 }
 
