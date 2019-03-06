@@ -1,0 +1,14 @@
+.Sidebar {
+  width: 300px;
+  height: 100%;
+  position: fixed;
+  left: -300px;
+  top:0;
+  background: #1a54e7;
+  z-index: 3;
+  transition: all 500ms cubic-bezier(.5, -.75, .7, 2);
+
+  &.active {
+    left: -60px;
+  }
+}
