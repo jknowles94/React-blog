@@ -39,3 +39,19 @@
 .nav {
   background: #fff;
 }
+
+.BurgerNav {
+  width: 30px;
+  cursor: pointer;
+  span {
+    display: block;
+    height: 2px;
+    margin-bottom: 7px;
+    width: 100%;
+    background: #fff;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
