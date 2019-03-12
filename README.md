@@ -3,7 +3,7 @@ add comments system to individual posts.
 Hoping to use animations to improve after.
 
 App : 
-  - Header/Nav - Search Model - mobile slider
+  - Header/Nav - mobile slider
   - Router: 
     - Homepage
       - Slider (3 articles)
@@ -14,11 +14,9 @@ App :
       - Article
       - Comments
       - Add comments form
-  - Sign Up - will add emails to firebase.
+  - Sign Up - will add emails to firebase / set up server in node
   - Footer
-
-PSD - https://freebiesupply.com/free-psd-websites/clear-blog-magazine-template-free-psd/
-
+  
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
