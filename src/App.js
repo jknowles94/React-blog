@@ -20,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <Sidebar show={this.state.showSidebar}/>
+        <Sidebar show={this.state.showSidebar} overlayClick={this.sidebarClickHandler}/>
         <Header sidebarClick={this.sidebarClickHandler}>Blog <strong>Template</strong></Header>
         <h1>React Blog</h1>
         <Newsletter/>

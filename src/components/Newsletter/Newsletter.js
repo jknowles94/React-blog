@@ -4,7 +4,8 @@ import './Newsletter.scss';
 const Newsletter = (props) => {
     return (
       <div className="NewsletterSignUp">
-        <p>NEWSLETTER</p>
+        <h1>Newsletter</h1>
+        <p>Donec elementum dui semper, pretium dui quis, pretium nisl.</p>
       </div>
     );
 }
