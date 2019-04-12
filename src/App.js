@@ -62,7 +62,7 @@ class App extends Component {
   };
 
   newsletterSubmitHandler = (event) => {
-
+    console.log(event);
   };
 
   render() {
