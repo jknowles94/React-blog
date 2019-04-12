@@ -17,7 +17,8 @@ class App extends Component {
           type: 'email'
         },
         validation: {
-          required: true
+          required: true,
+          isEmail: true
         },
         value: '',
         valid: false,
@@ -33,6 +34,38 @@ class App extends Component {
     })
   };
 
+  //Checks all the validation of the input element and returns true or false
+  checkValidation(value, rules) {
+    let isValid = true;
+    if (!rules) {
+        return true;
+    }
+    
+    if (rules.required) {
+        isValid = value.trim() !== '' && isValid;
+    }
+
+    if (rules.minLength) {
+        isValid = value.length >= rules.minLength && isValid
+    }
+
+    if (rules.maxLength) {
+        isValid = value.length <= rules.maxLength && isValid
+    }
+
+    if (rules.isEmail) {
+        const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+        isValid = pattern.test(value) && isValid
+    }
+
+    if (rules.isNumeric) {
+        const pattern = /^\d+$/;
+        isValid = pattern.test(value) && isValid
+    }
+
+    return isValid;
+  };
+
   newsletterChangedHandler = (event, id) => {
     //copy the form and element
     const updatedForm = {
@@ -43,9 +76,13 @@ class App extends Component {
     };
     //update the element
     updatedElement.value = event.target.value;
+    updatedElement.valid = this.checkValidation(updatedElement.value, updatedElement.validation);
     updatedElement.touched = true;
     //add element back to form
     updatedForm[id] = updatedElement;
+    //Update the whole form validation
+
+    //
     // //Update state
     this.setState({newsletterForm: updatedForm})
   };
