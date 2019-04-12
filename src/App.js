@@ -24,9 +24,9 @@ class App extends Component {
         value: '',
         valid: false,
         touched: false
-      },
-      formValid: false
-    }
+      }
+    },
+    formValid: false
   };
 
   sidebarClickHandler = () => {
@@ -56,7 +56,6 @@ class App extends Component {
     for(let id in updatedForm) {
       formValid = updatedForm[id].valid && formValid
     }
-    //
     // //Update state
     this.setState({newsletterForm: updatedForm, formValid: formValid});
   };
@@ -71,7 +70,7 @@ class App extends Component {
         <Sidebar show={this.state.showSidebar} overlayClick={this.sidebarClickHandler}/>
         <Header sidebarClick={this.sidebarClickHandler}>Blog <strong>Template</strong></Header>
         <h1>React Blog</h1>
-        <Newsletter form={this.state.newsletterForm} changed={this.newsletterChangedHandler} submit={this.newsletterSubmitHandler}/>
+        <Newsletter form={this.state.newsletterForm} valid={this.state.formValid} changed={this.newsletterChangedHandler} submit={this.newsletterSubmitHandler}/>
         <Footer/>
       </Fragment>
     );
