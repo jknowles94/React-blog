@@ -4,7 +4,7 @@ import './Input.scss';
 const Input = (props) => {
   let input = null;
   let inputClasses = ['form_input'];
-
+  // check if the input is valid or not after it has been touched
   if(props.invalid && props.shouldValidate && props.touched) {
     inputClasses.push('invalid');
   }
