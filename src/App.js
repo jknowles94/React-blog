@@ -23,7 +23,8 @@ class App extends Component {
         value: '',
         valid: false,
         touched: false
-      }
+      },
+      formValid: false
     }
   };
 
@@ -81,10 +82,14 @@ class App extends Component {
     //add element back to form
     updatedForm[id] = updatedElement;
     //Update the whole form validation
-
+    let formValid = true;
+    //Loop through form object to check each input
+    for(let id in updatedForm) {
+      formValid = updatedForm[id].valid && formValid
+    }
     //
     // //Update state
-    this.setState({newsletterForm: updatedForm})
+    this.setState({newsletterForm: updatedForm, formValid: formValid});
   };
 
   newsletterSubmitHandler = (event) => {
