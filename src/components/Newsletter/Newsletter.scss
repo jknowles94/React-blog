@@ -20,4 +20,16 @@
     }
   }
 
+  form > *{
+    display: inline-block;
+  }
+
+  .form_input {
+    border-radius: 25px 0 0 25px;
+  }
+
+  .btn_primary {
+    border-radius: 0 25px 25px 0;
+  }
+
 }

@@ -1,0 +1,21 @@
+.btn_primary {
+  background: #00B700;
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  padding: 5px 15px;
+  transition: all 500ms;
+  cursor: pointer;
+
+  &:hover {
+    background: darken(#00B700 , 2%);
+    border: 1px solid #fff;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    &:hover {
+      border: 1px solid transparent;
+    }
+  }
+}
