@@ -14,7 +14,6 @@ class App extends Component {
         id: 'email',
         elementType: 'input',
         config: {
-          placeholder: 'Please enter your email',
           type: 'email'
         },
         validation: {

@@ -18,7 +18,7 @@ const Newsletter = (props) => {
         config={props.form.email.config}
         changed={(event) => props.changed(event, props.form.email.id)}
         />
-        <Button disabled={!props.valid}>Submit</Button>
+        <Button disabled={!props.valid}>Sign Up</Button>
       </form>
     </div>
   );

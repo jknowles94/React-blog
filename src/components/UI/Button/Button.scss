@@ -1,19 +1,19 @@
 .btn_primary {
-  background: #00B700;
-  color: #fff;
+  background: #fff;
+  color: #1a54e7;
   border: 1px solid transparent;
   border-radius: 25px;
   padding: 5px 15px;
   transition: all 500ms;
   cursor: pointer;
+  font-weight: bold;
 
   &:hover {
-    background: darken(#00B700 , 2%);
-    border: 1px solid #fff;
+    background: darken(#fff , 2%);  
   }
 
   &:disabled {
-    opacity: 0.5;
+    cursor: not-allowed;
     &:hover {
       border: 1px solid transparent;
     }

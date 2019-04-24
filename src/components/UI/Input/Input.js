@@ -27,9 +27,9 @@ const Input = (props) => {
       onChange={props.changed} />;
   }
   return (
-    <div>
+    <React.Fragment>
       {input}
-    </div>
+    </React.Fragment>
   );
 }
 

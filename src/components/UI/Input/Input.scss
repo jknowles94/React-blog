@@ -4,7 +4,12 @@
   padding: 5px 15px;
   outline: 0;
   border:1px solid transparent;
-  &.invalid {
-    border:1px solid #FF0000;
+  background:lighten(#1a54e7, 10%);
+  color: #fff;
+  // &.invalid {
+  //   border:1px solid #FF0000;
+  // }
+  &::placeholder {
+    color: #fff;
   }
 }
