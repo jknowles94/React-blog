@@ -9,13 +9,14 @@
   font-weight: bold;
 
   &:hover {
-    background: darken(#fff , 2%);  
+    transform: translateX(-10px);
   }
 
   &:disabled {
     cursor: not-allowed;
     &:hover {
       border: 1px solid transparent;
+      transform: translateX(0);
     }
   }
 }

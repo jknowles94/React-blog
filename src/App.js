@@ -5,7 +5,11 @@ import Newsletter from './components/Newsletter/Newsletter';
 import Footer from './components/Footer/Footer';
 import Sidebar from './components/UI/Sidebar/Sidebar';
 import checkValidation from './services/checkFormValid';
-
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import ArticleCard from './components/ArticleCard/ArticleCard';
+import Axios from 'axios';
 class App extends Component {
   state = {
     showSidebar: false,
@@ -25,8 +29,21 @@ class App extends Component {
         touched: false
       }
     },
-    formValid: false
+    formValid: false,
+    articles: [],
   };
+
+  async componentDidMount() {
+    try {
+      const response = await Axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10');
+      const data = await response.data;
+      this.setState({
+        articles: data
+      })
+    } catch(err) {
+      console.log(err);
+    }
+  }
 
   sidebarClickHandler = () => {
     let sidebarState = this.state.showSidebar;
@@ -64,11 +81,25 @@ class App extends Component {
   };
 
   render() {
+    let articleCards = this.state.articles.map((article) => {
+      return (
+        <Col key={article.id} md={4}>
+          <ArticleCard article={article}></ArticleCard>
+        </Col>
+      )
+    });
+
     return (
       <Fragment>
         <Sidebar show={this.state.showSidebar} overlayClick={this.sidebarClickHandler}/>
         <Header sidebarClick={this.sidebarClickHandler}>Blog <strong>Template</strong></Header>
-        <h1>React Blog</h1>
+        <main className="articles">
+          <Container>
+            <Row>
+              {articleCards}
+            </Row>
+          </Container>
+        </main>
         <Newsletter form={this.state.newsletterForm} valid={this.state.formValid} changed={this.newsletterChangedHandler} submit={this.newsletterSubmitHandler}/>
         <Footer/>
       </Fragment>
