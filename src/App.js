@@ -83,7 +83,7 @@ class App extends Component {
   render() {
     let articleCards = this.state.articles.map((article) => {
       return (
-        <Col key={article.id} md={4}>
+        <Col key={article.id} md={4} sm={6}>
           <ArticleCard article={article}></ArticleCard>
         </Col>
       )

@@ -1,14 +1,15 @@
 import React from 'react';
 import Button from '../UI/Button/Button';
+import './ArticleCard.scss';
 
 const ArticleCard = (props) => {
-  console.log(props);
   return (
-    <article>
-      <img src="https://via.placeholder.com/250" alt={props.article.title}/>
-      <h3>{props.article.title}</h3>
-      <p>Author: Jake Knowles</p>
-      <Button>Read More</Button>
+    <article className="article_card">
+      <img src="https://via.placeholder.com/600" alt={props.article.title}/>
+      <h2>{props.article.title}</h2>
+      <div className="divider"></div>
+      <p>Author: <strong>Jake Knowles</strong></p>
+      <Button color="primary"><span>Read More</span></Button>
     </article>
   )
 }
