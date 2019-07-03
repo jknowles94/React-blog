@@ -7,9 +7,6 @@ App :
   - Router: 
     - Homepage
       - Slider (3 articles)
-      - Featured Blog section (2 articles)
-      - list of blogs
-      - Another Featured Blog section (2 articles)
     - Article Page:
       - Article
       - Comments

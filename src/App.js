@@ -10,6 +10,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ArticleCard from './components/ArticleCard/ArticleCard';
 import Axios from 'axios';
+import FeaturedArticle from './components/FeaturedArticle/FeaturedArticle';
 class App extends Component {
   state = {
     showSidebar: false,
@@ -31,15 +32,24 @@ class App extends Component {
     },
     formValid: false,
     articles: [],
+    featuredArticle: {}
   };
 
   async componentDidMount() {
     try {
       const response = await Axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10');
       const data = await response.data;
+      data.map((art) => {
+        art.excerpt = art.body.substring(0, 250);
+        art.excerpt += '...';
+        return art;
+      });
+      const featuredArticle = data[0];
+      const otherArticles = data.slice(1);
       this.setState({
-        articles: data
-      })
+        articles: otherArticles,
+        featuredArticle: featuredArticle
+      });
     } catch(err) {
       console.log(err);
     }
@@ -93,6 +103,7 @@ class App extends Component {
       <Fragment>
         <Sidebar show={this.state.showSidebar} overlayClick={this.sidebarClickHandler}/>
         <Header sidebarClick={this.sidebarClickHandler}>Blog <strong>Template</strong></Header>
+        <FeaturedArticle feature={this.state.featuredArticle}></FeaturedArticle>
         <main className="articles">
           <Container>
             <Row>
